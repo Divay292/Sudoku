@@ -15,11 +15,14 @@
         custom:layout_constraintTop_toTopOf="parent"
         custom:cellFillCol="#6600DDFF"
         custom:cellsHighlightColor="#2600DDFF"
+        custom:letterColor="@color/black"
+        custom:letterColorSolve="#00FF00"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
     </com.example.sudoku.SudokuBoard>
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -40,7 +43,7 @@
             android:textColor="@color/black"
             android:textSize="24sp"
             custom:letterColor="@color/black"
-            custom:letterColorSolve="@color/black"/>
+            custom:letterColorSolve="@color/black" />
 
         <Button
             android:id="@+id/button4"
@@ -53,7 +56,7 @@
             android:textColor="@color/black"
             android:textSize="24sp"
             custom:letterColor="#000000"
-            custom:letterColorSolve="#000000"/>
+            custom:letterColorSolve="#000000" />
 
         <Button
             android:id="@+id/button5"
@@ -66,7 +69,7 @@
             android:textColor="@color/black"
             android:textSize="24sp"
             custom:letterColor="#000000"
-            custom:letterColorSolve="#000000"/>
+            custom:letterColorSolve="#000000" />
 
         <Button
             android:id="@+id/button6"
@@ -79,7 +82,7 @@
             android:textColor="@color/black"
             android:textSize="24sp"
             custom:letterColor="#000000"
-            custom:letterColorSolve="#000000"/>
+            custom:letterColorSolve="#000000" />
 
         <Button
             android:id="@+id/button7"
@@ -92,7 +95,7 @@
             android:textColor="@color/black"
             android:textSize="24sp"
             custom:letterColor="#000000"
-            custom:letterColorSolve="#000000"/>
+            custom:letterColorSolve="#000000" />
 
         <Button
             android:id="@+id/button8"
@@ -105,7 +108,7 @@
             android:textColor="@color/black"
             android:textSize="24sp"
             custom:letterColor="#000000"
-            custom:letterColorSolve="#000000"/>
+            custom:letterColorSolve="#000000" />
 
         <Button
             android:id="@+id/button"
@@ -118,7 +121,7 @@
             android:textColor="@color/black"
             android:textSize="24sp"
             custom:letterColor="#000000"
-            custom:letterColorSolve="#000000"/>
+            custom:letterColorSolve="#000000" />
 
         <Button
             android:id="@+id/button2"
@@ -131,7 +134,7 @@
             android:textColor="@color/black"
             android:textSize="24sp"
             custom:letterColor="#000000"
-            custom:letterColorSolve="#000000"/>
+            custom:letterColorSolve="#000000" />
 
         <Button
             android:id="@+id/button9"
@@ -144,7 +147,21 @@
             android:textColor="@color/black"
             android:textSize="24sp"
             custom:letterColor="#000000"
-            custom:letterColorSolve="#000000"/>
+            custom:letterColorSolve="#000000" />
     </LinearLayout>
+
+    <Button
+        android:id="@+id/solveButton"
+        android:layout_width="125dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/solve_btn"
+        android:onClick="solve"
+        android:text="@string/Solve"
+        android:textSize="18sp"
+        custom:layout_constraintBottom_toBottomOf="parent"
+        custom:layout_constraintEnd_toEndOf="parent"
+        custom:layout_constraintStart_toStartOf="parent"
+        custom:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        custom:layout_constraintVertical_bias="0.164" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

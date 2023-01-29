@@ -10,4 +10,7 @@
     <string name="Seven">7</string>
     <string name="Eight">8</string>
     <string name="Nine">9</string>
+
+    <string name="Solve">Solve</string>
+    <string name="Clear">Clear</string>
 </resources>

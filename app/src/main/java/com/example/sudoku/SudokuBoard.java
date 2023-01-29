@@ -59,28 +59,6 @@ public class SudokuBoard extends View {
         setMeasuredDimension(dimension, dimension);
     }
 
-    @SuppressLint("ClickableViewAccessibility")
-    @Override
-    public boolean onTouchEvent(MotionEvent event) {
-        boolean isValid;
-
-        float x = event.getX();
-        float y = event.getY();
-
-        int action = event.getAction();
-
-        if (action == MotionEvent.ACTION_DOWN) {
-            solver.setSelectedRow((int)Math.ceil(y/cellSize));
-            solver.setSelectedCol((int)Math.ceil(x/cellSize));
-            isValid = true;
-        }
-        else {
-            isValid = false;
-        }
-
-        return isValid;
-    }
-
     private void drawNumbers(Canvas canvas) {
 
         letterPaint.setTextSize(cellSize);
@@ -94,8 +72,8 @@ public class SudokuBoard extends View {
                     width = letterPaint.measureText(text);
                     height = letterPaintBounds.height();
 
-                    canvas.drawText(text, (c*cellSize) + (cellSize - width)/2,
-                            (r*cellSize + cellSize) - (cellSize - height)/2, letterPaint);
+                    canvas.drawText(text, (c*cellSize) + ((cellSize - width)/2),
+                            (r*cellSize + cellSize) - ((cellSize - height)/2), letterPaint);
                 }
             }
         }
@@ -113,8 +91,8 @@ public class SudokuBoard extends View {
             width = letterPaint.measureText(text);
             height = letterPaintBounds.height();
 
-            canvas.drawText(text, (c*cellSize) + (cellSize - width)/2,
-                    (r*cellSize + cellSize) - (cellSize - height)/2, letterPaint);
+            canvas.drawText(text, (c*cellSize) + ((cellSize - width)/2),
+                    (r*cellSize + cellSize) - ((cellSize - height)/2), letterPaint);
         }
     }
 
@@ -153,6 +131,28 @@ public class SudokuBoard extends View {
         canvas.drawRect(0, 0, getWidth(), getHeight(), boardColPaint);
         drawBoard(canvas);
         drawNumbers(canvas);
+    }
+
+    @SuppressLint("ClickableViewAccessibility")
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        boolean isValid;
+
+        float x = event.getX();
+        float y = event.getY();
+
+        int action = event.getAction();
+
+        if (action == MotionEvent.ACTION_DOWN) {
+            solver.setSelectedRow((int)Math.ceil(y/cellSize));
+            solver.setSelectedCol((int)Math.ceil(x/cellSize));
+            isValid = true;
+        }
+        else {
+            isValid = false;
+        }
+
+        return isValid;
     }
 
     private void drawThickLine() {
